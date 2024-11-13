@@ -1,0 +1,15 @@
+/* estilos generales */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+header,footer{
+    height: 5vh;
+}
+main{
+    height: 90vh;
+}
+
+/* estilos del formulario de login */
+
