@@ -4,25 +4,29 @@ const password = document.getElementById("password")
 const form = document.getElementById("form")
 
 
-let users = []
+
 
 const getUsers = async() => {
     const response = await fetch(API)
     if(response.ok){
         const data = await response.json()
-        users = data
-        console.log(users)
+        console.log(data)
+        return data
+    }else{
+        return []
     }
 }
 
-getUsers()
 
 
 
-form.addEventListener("submit", (event) => {
+
+form.addEventListener("submit", async (event) => {
     event.preventDefault()
 
-    const indexOfUser = users.findIndex(element => element.email == email.value)
+    const users =  await getUsers()
+
+    const indexOfUser = users.findIndex(user => user.email == email.value)
 
     if(indexOfUser != -1){
         const userPassword = users[indexOfUser].address.geo.lat
@@ -35,8 +39,6 @@ form.addEventListener("submit", (event) => {
         alert("el email ingresado no figura en nuestra base de datos")
     }
         
-
-  
         
 })
 
