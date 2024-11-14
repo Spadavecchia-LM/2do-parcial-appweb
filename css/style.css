@@ -1,15 +1,59 @@
 /* estilos generales */
 
+:root{
+    --bg-white:#e5e5e5;
+    --bg-blue:#3d405b;
+    --text-black: #14213d;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 header,footer{
     height: 5vh;
+    background-color: var(--bg-blue);
 }
 main{
     height: 90vh;
+    background-color: var(--bg-white);
+    display: grid;
+    place-items: center;
 }
 
 /* estilos del formulario de login */
 
+.form{
+    
+    padding: 30px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    && .form-field{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    && label{
+        color: var(--text-black);
+    }
+    && input{
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        background-color: transparent;
+        &&:focus{
+            outline: none;
+        }
+    }
+    && .btn{
+        padding: 10px 20px;
+        background-color: var(--text-black);
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        color: var(--bg-white);
+        
+    }
+}
