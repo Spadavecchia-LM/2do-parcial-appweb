@@ -17,6 +17,23 @@ const getUsers = async() => {
     }
 }
 
+const displayToast = (status, message) => {
+    Swal.fire({
+        toast: true,
+        position: 'bottom',
+        icon: status, 
+        title: message,
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+}
+
+
 
 
 
@@ -31,12 +48,16 @@ form.addEventListener("submit", async (event) => {
     if(indexOfUser != -1){
         const userPassword = users[indexOfUser].address.geo.lat
         if(password.value == userPassword){
-            alert("iniciaste sesion correctamente")
+            displayToast("success", "iniciaste sesion correctamente!")
+
+            setTimeout(() => {
+                window.location.href = "pages/main.html"
+            },2000)
         }else{
-            alert("la contraseña ingresa no es la correcta")
+            displayToast("error", "la contraseña ingresada es incorrecta")
         }
     }else{
-        alert("el email ingresado no figura en nuestra base de datos")
+        displayToast("error", "el mail ingresado no existe en nuestra base de datos")
     }
         
         

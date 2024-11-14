@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    
     <title>2do parcial | Leonardo Spadavecchia</title>
 </head>
+
 <body>
-    
+
+    <header class="header">
+            <button class="btn" id="logoutBtn">Cerrar sesión</button>
+    </header>
+
+    <main>
+        
+        <form class="form" id="form2">
+            <label for="nombre">Ingrese su nombre</label>
+            <input type="text" id="nombre" required>
+            <button type="submit" class="btn"> realizar informe de genero y nacionalidad</button>
+        </form>
+
+        <div id="genderContainer">
+
+        </div>
+
+        <div id="nationalityContainer">
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados, 2do parcial de Leonardo Spadavecchia - Aplicaciones Web</p>
+    </footer>
 
     <script src="../js/main.js"></script>
 </body>
+
 </html>

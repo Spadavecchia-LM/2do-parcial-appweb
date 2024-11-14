@@ -13,12 +13,29 @@
 header,footer{
     height: 5vh;
     background-color: var(--bg-blue);
+    color: var(--bg-white);
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main{
     height: 90vh;
     background-color: var(--bg-white);
     display: grid;
     place-items: center;
+    color: var(--text-black);
+}
+
+.btn{
+    padding: 10px 20px;
+    background-color: var(--text-black);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: var(--bg-white);
+    
 }
 
 /* estilos del formulario de login */
@@ -47,13 +64,22 @@ main{
             outline: none;
         }
     }
-    && .btn{
-        padding: 10px 20px;
-        background-color: var(--text-black);
-        border-radius: 6px;
-        border: none;
-        cursor: pointer;
-        color: var(--bg-white);
-        
+     
+}
+
+
+/* estilos de la pagina de informes */
+
+.header{
+    display: flex;
+    justify-content: end;
+    && button{
+        background-color: rgb(122, 42, 42);
     }
+}
+
+#nationalityContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
